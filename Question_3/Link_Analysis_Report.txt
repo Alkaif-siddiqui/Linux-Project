@@ -86,6 +86,19 @@ Link Analysis Report
      will not work anymore.It will become a link because it depends on the path, to original.txt.The softlink.txt will be broken since it relies 
      on original.txt.
 
+5. Conclusions drawn from the experiment
+   Hard links and the original file use the thing to store information, which is called an inode.The original file and hard links are connected in 
+   a way that they share same  inode.Hard links and the original file are the same thing when it comes to the inode they use.Symbolic links are 
+   different from hard links because they have their own inode.When you make a soft link it gets its own inode that is separate from the original
+   file.Deleting the file does not affect the hard link because they share the same inode and still access the file data.On the hand symbolic links
+   do not work when the original file is deleted.Symbolic links become broken when the original file is deleted because they store the path to 
+   the file and cannot access file data after deletion of original file.Symbolic links store the file path, which is the reason, they become broken
+   when the original file is moved or deleted.
+
+
+
+
+
 
 
 
