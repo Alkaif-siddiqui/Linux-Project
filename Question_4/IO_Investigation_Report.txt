@@ -18,5 +18,13 @@ IO INVESTIGATION REPORT
     process talk to the terminal.File descriptor 28 is points to "mcpGateway.log", this means the process is using this log file.File descriptors 
     are important, for how the process works and They help the process connect to the terminal and use files.
 
-
+3. Output redirection and error redirection results
+   commmnds: a.pwd > output.txt,  b.cat output.txt,  c.ls non_existing_file 2> error.txt,  d.cat error.txt
+   output: a and b are creates a text file with different names and save their outputs in that file which i created as output.txt and error.txt
+   respectively and c and d gives the output if u want to see  the output see in output.txt and error.txt.
+   observation:  I used the output redirection symbol, which is this thing: > to put the result of the pwd command into a file called output.txt.The
+    file output.txt had the working directory in it which is /workspaces/Linux-Project/Question_4. Then I used error redirection, which is 2> to put
+    any error messages into a file called error.txt.So when I tried to use ls with a file name that was not valid the error message went into 
+    error.txt of showing up on the terminal.
+    This shows how you can send the output and the errors to files, which is  useful, for the output and the errors.
    
