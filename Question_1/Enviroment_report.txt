@@ -17,7 +17,13 @@ Linux Environment Verification Report
    observatuon: The command <echo $SHELL> shows the current default shell used by the user account and The output will be </bin/bash> which is the 
    most used command-line interpreters. This means I am using Bash shell.It is confirmed that my session uses Bash.
 
-  
+3. Current Working Directory
+   command: pwd
+   output: /workspaces/Linux-Project/Question_1
+
+   observation: This command <pwd> displays the absolute path of current working directory. The output displays the user currently working 
+   in </workspaces/Linux-Project/Question_1>, this verified user current workspace's Location.
+
 
 
 
