@@ -35,3 +35,40 @@ Secure Project workspace Setup
     Observation: This command <chmod -R 770 Project_Workspace> change the permission of the Project_Workspace and its sub directories.Now here only 
     owner and group have permisssion to read, write, execute. while others have no access.Now, directories more secure by restricting the access and 
     only authorized user can access it.
+
+3.1 Ownership details before changing
+  command: ls -ld Project_Workspace Project_Workspace/*
+  output: drwxrwx---+ 5 codespace codespace 4096 Jun 23 12:07 Project_Workspace
+          drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Documents
+          drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:07 Project_Workspace/Reports
+          drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Source_Code
+  Observation: This show ownership details of user and group. notice that the output, here the owner of user and group is codespace codespace 
+  respectively.This is my default user and group. which is already secure.i don't need to change it Since nobody else is using my Codespace container it is totally 
+  fine to keep the ownership as codespace:codespace for my environment.
+
+  Transition state : I want to chnage owner of user and group just to check my knowledge . This command  <sudo chown -R lead_dev:dev_team Project_Workspace>
+  is used for change the owner of user and  group.
+
+3.2 Ownership details after changing
+   command: ls -ld Project_Workspace
+            ls -ld Project_Workspace Project_Workspace/*
+   output: ls: cannot access 'Project_Workspace/*': Permission denied
+           drwxrwx---+ 5 lead_dev dev_team 4096 Jun 23 12:07  Project_Workspace when we use thics command
+           (ls -ld Project_Workspace Project_Workspace/*)
+
+           drwxrwx---+ 5 lead_dev dev_team 4096 Jun 23 12:07 Project_Workspace when we use this command <ls -ld Project_Workspace>
+
+    observation: The command displays owernship details of this directory Project_Workspace only and permission are denied for its sub directories.
+    The owner of user and group is lead_dev:dev_team respectively.
+    
+    Note: we want to chnage ownership permission of the user and group for access all sub directories.
+    i used this command for change access <sudo chown -R codespace:codespace Project_Workspace>
+4. Umask value used
+   
+
+
+    
+
+       
+
+   
