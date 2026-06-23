@@ -69,9 +69,20 @@ Secure Project workspace Setup
 
    Observation: The command umask displays the  value of defalut access. In my case umask value 0022 owner and groups have only read access and
    others have no access. Then I am set umask value to 0027 this means owner have full access, group have only access to read and other gets no 
-   access.
+   access.The system setting of umask 027 helps prevent files from being seen or used by mistake.
 
-   
+5. Explanation of how permissions protect project data
+  1.Only authorized people who are allowed can,Use project files.
+
+  2.The person who owns the project has control over the workspace area.
+
+  3.People, in the group can work together safely and securely.
+
+  4.Other people who are not part of the group cannot look at and Change project data.
+
+  5.The system automatically makes files with safe and secure permissions.
+ 
+  6.Important project papers stay safe from unauthorized people.
 
 
     
