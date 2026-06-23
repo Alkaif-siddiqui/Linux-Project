@@ -1,2 +1,6 @@
 First i Create a file, hard link, and symbolic link after this investigation starts:
-
+a. command: mkdir Link_Analysis and cd Link_Analysis
+   output: @Alkaif-siddiqui ➜ /workspaces/Linux-Project/Question_3/Link_Analysis (main) $ 
+   observation : This command creates a directory named Link_Analysis and change directory to the Link_Analysis
+b. command: echo "Linux Link Analysis Experiment" > original.txt
+  observation: This creates a txt file inside a Link_analysis directory and print this message "Linux Link Analysis Experiment" inside it.
