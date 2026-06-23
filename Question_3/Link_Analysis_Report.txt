@@ -47,4 +47,5 @@ Link Analysis Report
              Change: 2026-06-23 15:05:28.376605343 +0000
              Birth: 2026-06-23 14:57:21.852594633 +0000
    observation: The command show hardlink.txt with inode number as 1311018 and links conut 2 that means this file share same inode as a another file.
-   file size is 31 bytes. The (0666/-rw-rw-rw-) indicates thats all users have to read and write access.
+   file size is 31 bytes. The (0666/-rw-rw-rw-) indicates thats all users have to read and write access.The owner and group have same named as
+   codespace with UID: 1000 and GID: 1000.
