@@ -1,0 +1,13 @@
+Secure Project workspace Setup
+
+1. Directory Structure Created
+   command:   tree Project_Workspace
+   output:    Project_Workspace
+              ├── Documents
+              ├── Reports
+              │   └── Project_Workspace_Report.txt
+              └── Source_Code
+    
+    Observation: This command <tree Project_Workspace> displays all  directory  in tree like Structure which in this Project_Workspace directory.
+    The output show Project_Workspace successfully created and 3 subdirectories inside it. The Reports directory contains one file 
+    Project_Workspace_Report.txt.
