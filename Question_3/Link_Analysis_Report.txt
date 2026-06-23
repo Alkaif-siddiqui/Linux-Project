@@ -7,5 +7,5 @@ b. command: echo "Linux Link Analysis Experiment" > original.txt
 c. command : cat original.txt
    output: Linux Link Analysis Experiment
    observation: This command displays the content of the file which is original.txt.
-
-   
+d. command : ln original.txt hardlink.txt
+   observation : This command creates a Hard Links
