@@ -64,6 +64,13 @@ Secure Project workspace Setup
     Note: we want to chnage ownership permission of the user and group for access all sub directories.
     i used this command for change access <sudo chown -R codespace:codespace Project_Workspace>
 4. Umask value used
+   command: umask, umask 027
+   output : 0022(umask), 0027(umask 0027)
+
+   Observation: The command umask displays the  value of defalut access. In my case umask value 0022 owner and groups have only read access and
+   others have no access. Then I am set umask value to 0027 this means owner have full access, group have only access to read and other gets no 
+   access.
+
    
 
 
