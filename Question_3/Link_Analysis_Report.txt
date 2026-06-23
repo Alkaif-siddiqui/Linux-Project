@@ -4,3 +4,8 @@ a. command: mkdir Link_Analysis and cd Link_Analysis
    observation : This command creates a directory named Link_Analysis and change directory to the Link_Analysis
 b. command: echo "Linux Link Analysis Experiment" > original.txt
   observation: This creates a txt file inside a Link_analysis directory and print this message "Linux Link Analysis Experiment" inside it.
+c. command : cat original.txt
+   output: Linux Link Analysis Experiment
+   observation: This command displays the content of the file which is original.txt.
+
+   
