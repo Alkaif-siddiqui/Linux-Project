@@ -1,0 +1,7 @@
+total 0
+lrwx------ 1 codespace codespace 64 Jun 23 16:40 0 -> /dev/pts/0
+lrwx------ 1 codespace codespace 64 Jun 23 16:40 1 -> /dev/pts/0
+lrwx------ 1 codespace codespace 64 Jun 23 16:40 2 -> /dev/pts/0
+lrwx------ 1 codespace codespace 64 Jun 23 16:40 255 -> /dev/pts/0
+l-wx------ 1 codespace codespace 64 Jun 23 16:40 28 -> /home/codespace/.vscode-remote/data/logs/20260623T144842/mcpGateway.log
+l-wx------ 1 codespace codespace 64 Jun 23 16:40 6 -> /dev/null
