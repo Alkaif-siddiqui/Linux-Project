@@ -38,7 +38,17 @@ Linux Environment Verification Report
    one Report file named as <Enviroment_report.txt> and three image files named as <Shell.png>, <workingdir.png> and <id.png>. it also displays 
    permission, sizes, owenrship and modification dates of the file.
 
-
+5. Network Connectivity Verification
+   command: ping -c 4 google.com
+   output:  PING google.com (142.251.42.238) 56(84) bytes of data.
+            --- google.com ping statistics ---
+           4 packets transmitted, 0 received, 100% packet loss, time 3061ms
+   
+   Observation: This command <ping -c 4 google.com> executes for verify network connectivity.The output shows that 4 ICMP echo request packets 
+   were sent. 0 ICMP echo request packets were received, resulting in 100 percent packet loss, for the ICMP echo request packets.That means the 
+   network connectivity check was not successful and the system  not able to reach Googles server. The network is not working properly so the system 
+   can not connect to Googles server. This is a problem, with the network connectivity.
+            
            
 
 
