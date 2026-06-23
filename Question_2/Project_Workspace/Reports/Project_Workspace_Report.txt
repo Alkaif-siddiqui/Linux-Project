@@ -11,3 +11,27 @@ Secure Project workspace Setup
     Observation: This command <tree Project_Workspace> displays all  directory  in tree like Structure which in this Project_Workspace directory.
     The output show Project_Workspace successfully created and 3 subdirectories inside it. The Reports directory contains one file 
     Project_Workspace_Report.txt.
+
+2.1 Check permission Before modification
+    command: ls -ld Project_Workspace Project_Workspace/*
+
+    output: drwxrwxrwx+ 5 codespace codespace 4096 Jun 23 12:07 Project_Workspace
+            drwxrwxrwx+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Documents
+            drwxrwxrwx+ 2 codespace codespace 4096 Jun 23 12:07 Project_Workspace/Reports
+            drwxrwxrwx+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Source_Code
+    
+    Observation: The command <ls -ld Project_Workspace Project_Workspace/*> displays detailed information of Project_Workspace directory and its 
+    subdirectory.All directories have owned by same user and group which is codespaces.This drwxrwxrwx+ indiactes all directories have full access 
+    777 means to read, write, execute.
+    
+   Transition state : Here we change File permissions with this command <chmod -R 770 Project_Workspace>
+2.2 Check permission after  modification
+    command: ls -ld Project_Workspace Project_Workspace/*
+    output: drwxrwx---+ 5 codespace codespace 4096 Jun 23 12:07 Project_Workspace
+            drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Documents
+            drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:07 Project_Workspace/Reports
+            drwxrwx---+ 2 codespace codespace 4096 Jun 23 12:01 Project_Workspace/Source_Code
+    
+    Observation: This command <chmod -R 770 Project_Workspace> change the permission of the Project_Workspace and its sub directories.Now here only 
+    owner and group have permisssion to read, write, execute. while others have no access.Now, directories more secure by restricting the access and 
+    only authorized user can access it.
