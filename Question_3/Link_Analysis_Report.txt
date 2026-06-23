@@ -1,0 +1,2 @@
+First i Create a file, hard link, and symbolic link after this investigation starts:
+
