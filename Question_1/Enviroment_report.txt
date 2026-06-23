@@ -24,6 +24,22 @@ Linux Environment Verification Report
    observation: This command <pwd> displays the absolute path of current working directory. The output displays the user currently working 
    in </workspaces/Linux-Project/Question_1>, this verified user current workspace's Location.
 
+4. List of Files and Directory in my workspace
+   command: ls -la
+   output: total 72
+           drwxrwxrwx+ 2 codespace codespace  4096 Jun 23 10:36 .
+           drwxrwxrwx+ 4 codespace root       4096 Jun 23 09:39 ..
+           -rw-rw-rw-  1 codespace codespace  1346 Jun 23 10:42 Enviroment_report.txt
+           -rw-rw-rw-  1 codespace codespace 14541 Jun 23 09:59 Shell.png
+           -rw-rw-rw-  1 codespace codespace 27373 Jun 23 09:47 id.png
+           -rw-rw-rw-  1 codespace codespace 14926 Jun 23 10:35 workingdir.png
+
+   observation: The command <ls -la> displays the all files including hidden items, files information.The output shows that this directory contains
+   one Report file named as <Enviroment_report.txt> and three image files named as <Shell.png>, <workingdir.png> and <id.png>. it also displays 
+   permission, sizes, owenrship and modification dates of the file.
+           
+
+
 
 
 
