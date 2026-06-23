@@ -35,6 +35,16 @@ Link Analysis Report
     Birth: 2026-06-23 14:57:21.852594633 +0000
 
     Observation: This command show the inode number, access Time, modifiaction Time, File Size, Permission ownership, Link count and uid of the 
-    orginial.txt.Links count : 2 shows here are hardLinks to the same file data.
+    orginial.txt.Links count : 2,  shows here are hardLinks to the same file data.
 
-
+4.2 command: stat hardlink.txt
+    output:  File: hardlink.txt
+             Size: 31              Blocks: 8          IO Block: 4096   regular file
+             Device: 7,4     Inode: 1311018     Links: 2
+             Access: (0666/-rw-rw-rw-)  Uid: ( 1000/codespace)   Gid: ( 1000/codespace)
+             Access: 2026-06-23 15:05:29.580605370 +0000
+             Modify: 2026-06-23 14:57:21.852594633 +0000
+             Change: 2026-06-23 15:05:28.376605343 +0000
+             Birth: 2026-06-23 14:57:21.852594633 +0000
+   observation: The command show hardlink.txt with inode number as 1311018 and links conut 2 that means this file share same inode as a another file.
+   file size is 31 bytes. The (0666/-rw-rw-rw-) indicates thats all users have to read and write access.
