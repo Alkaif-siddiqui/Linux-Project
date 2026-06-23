@@ -1,0 +1,14 @@
+Linux Environment Verification Report
+
+1. Username and groups
+   command: id 
+   output:uid=1000(codespace) gid=1000(codespace) groups=1000(codespace),985(pipx),986(python),987(oryx),988(golang),989(docker),990(sdkman),
+          991(rvm),992(php),993(conda),994(nvs),995(nvm),996(hugo),1001(ssh).
+   Observation: 
+   This command's output shows the current user is codespaces with UID 1000 and  GID(group ID) 1000. The User belongs to multiple groups such as 
+   docker, php, python, golang, oryx, conda, nvm, and pipx provides access to development and administration tools.Here. The user's identity and 
+   groups associates were successfully Verified using the <id> command
+
+
+
+   
