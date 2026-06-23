@@ -9,7 +9,14 @@ IO INVESTIGATION REPORT
     is in the </workspaces/Linux-Project/Question_4> directory.This list shows includes system libraries.It also shows locale files and the terminal 
     device </dev/pts/0>.here is a VS Code remote log file open.The file <IO_Investigation_Report.txt> is not in the list.So it is not open, in the bash
     process.
- '
+  
+  2.File descriptor observations
+    command: ls -l /proc/72316/fd
+    output: see in this file <file_descriptors.txt>
+    observation: The command <ls -l /proc/72316/fd> shows which files a process with ID 72316 is using.File descriptors 0 1 and 2 are connected to 
+    "/dev/pts/0",These are for input, standard output and standard error.File descriptor 255 is also connected to "/dev/pts/0". They help the 
+    process talk to the terminal.File descriptor 28 is points to "mcpGateway.log", this means the process is using this log file.File descriptors 
+    are important, for how the process works and They help the process connect to the terminal and use files.
 
 
    
