@@ -13,7 +13,8 @@ e. command: ln -s original.txt softlink.txt
    observation: This command creates a SoftLink.
 
 Link Analysis Report
-1. command: ls -li
+1. Inode numbers of all files
+   command: ls -li
    output:  total 8
             1311018 -rw-rw-rw- 2 codespace codespace 31 Jun 23 14:57 hardlink.txt
             1311018 -rw-rw-rw- 2 codespace codespace 31 Jun 23 14:57 original.txt
@@ -24,6 +25,17 @@ Link Analysis Report
    softlink.txt is a link, not the actual file.When I look at softlink.txt I see that it points to original.txt. If I deleted the  original.txt 
    hardlink.txt will still work, Softlink.txt may become a broken link because it points to original.txt which is no longer there.
 
+3. Effect of deleting the original file
+   command : rm original.txt
+   output : This deleted the file original.txt you also check the run ls command, output will be   hardlink.txt  softlink.txt
+   Observation: Before the deleeting the original.txt file all the three files original.txt, hardlink.txt, softlink.txt displays same
+   content "Linux Link Analysis Experiment".
+   After deletion of original.txt file, The file hardlink.txt still. Showed the file content. This is because a hard link goes to the files 
+   information and data.The file softlink.txt did not Showed the file content and Gave a "No such file or directory" error. This happened because 
+   softlink.txt needed the path to original.txt. Original.txt is gone now.
+
+
+4. Metadata collected using Linux utilities
 4.1 command: stat original.txt
     output:  File: original.txt
     Size: 31              Blocks: 8          IO Block: 4096   regular file
@@ -36,6 +48,7 @@ Link Analysis Report
 
     Observation: This command show the inode number, access Time, modifiaction Time, File Size, Permission ownership, Link count and uid of the 
     orginial.txt.Links count : 2,  shows here are hardLinks to the same file data.
+
 
 4.2 command: stat hardlink.txt
     output:  File: hardlink.txt
