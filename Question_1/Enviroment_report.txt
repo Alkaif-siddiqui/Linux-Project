@@ -37,6 +37,8 @@ Linux Environment Verification Report
    observation: The command <ls -la> displays the all files including hidden items, files information.The output shows that this directory contains
    one Report file named as <Enviroment_report.txt> and three image files named as <Shell.png>, <workingdir.png> and <id.png>. it also displays 
    permission, sizes, owenrship and modification dates of the file.
+
+
            
 
 
