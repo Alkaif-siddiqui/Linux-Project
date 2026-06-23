@@ -11,3 +11,6 @@ d. command : ln original.txt hardlink.txt
    observation : This command creates a HardLink.
 e. command: ln -s original.txt softlink.txt
    observation: This command creates a SoftLink.
+
+Link Analysis Report
+1. 
