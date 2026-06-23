@@ -13,4 +13,13 @@ e. command: ln -s original.txt softlink.txt
    observation: This command creates a SoftLink.
 
 Link Analysis Report
-1. 
+1. command: ls -li
+   output:  total 8
+            1311018 -rw-rw-rw- 2 codespace codespace 31 Jun 23 14:57 hardlink.txt
+            1311018 -rw-rw-rw- 2 codespace codespace 31 Jun 23 14:57 original.txt
+             1311046 lrwxrwxrwx 1 codespace codespace 12 Jun 23 15:07 softlink.txt -> original.txt
+   Observation: I have two files original.txt and hardlink.txt. They have the same inode number, which is 1311018. They also have a link count of 2.
+   This means that original.txt and hardlink.txt are links, to the same file data. If I make changes to original.txt or hardlink.txt it will affect
+   the file because they share the same inode.The file softlink.txt is different. It has an inode number,which is 1311046. This tells us that 
+   softlink.txt is a link, not the actual file.When I look at softlink.txt I see that it points to original.txt. If I deleted the  original.txt 
+   hardlink.txt will still work, Softlink.txt may become a broken link because it points to original.txt which is no longer there.
