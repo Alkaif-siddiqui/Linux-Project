@@ -3,12 +3,13 @@ IO INVESTIGATION REPORT
 1. Open files identified
   command: a. ps -ef | grep IO_Investigation_Report.txt, b. lsof -p 72316
   output: see in this file <open_files.txt>
-observation: 
-The command <ps -ef | grep IO_Investigation_Report.txt> only shows the grep process. This means no process is using or running with the file 
-<IO_Investigation_Report.txt>. The <lsof -p 72316> command lists open files for the bash shell process and the process ID is 72316.The bash process
- is in the </workspaces/Linux-Project/Question_4> directory.This list shows includes system libraries.It also shows locale files and the terminal 
- device </dev/pts/0>.here is a VS Code remote log file open.The file <IO_Investigation_Report.txt> is not in the list.So it is not open, in the bash
- process.
+    observation: 
+    The command <ps -ef | grep IO_Investigation_Report.txt> only shows the grep process. This means no process is using or running with the file 
+    <IO_Investigation_Report.txt>. The <lsof -p 72316> command lists open files for the bash shell process and the process ID is 72316.The bash process
+    is in the </workspaces/Linux-Project/Question_4> directory.This list shows includes system libraries.It also shows locale files and the terminal 
+    device </dev/pts/0>.here is a VS Code remote log file open.The file <IO_Investigation_Report.txt> is not in the list.So it is not open, in the bash
+    process.
+ '
 
 
    
