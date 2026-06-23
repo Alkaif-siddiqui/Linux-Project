@@ -25,6 +25,13 @@ Link Analysis Report
    softlink.txt is a link, not the actual file.When I look at softlink.txt I see that it points to original.txt. If I deleted the  original.txt 
    hardlink.txt will still work, Softlink.txt may become a broken link because it points to original.txt which is no longer there.
 
+2. Comparison between hard link and symbolic link
+   InTermsOf          HardLink                                 SoftLink
+   inodeNumbers:     same as original file.               different as original file.
+   PointsTo:         here will be needed actual inode.    here will be needed actual path.
+   after original    This will be work.                     This will not be work.
+   filedeletion:   
+
 3. Effect of deleting the original file
    command : rm original.txt
    output : This deleted the file original.txt you also check the run ls command, output will be   hardlink.txt  softlink.txt
