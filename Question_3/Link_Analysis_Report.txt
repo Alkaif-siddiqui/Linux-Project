@@ -49,3 +49,23 @@ Link Analysis Report
    observation: The command show hardlink.txt with inode number as 1311018 and links conut 2 that means this file share same inode as a another file.
    file size is 31 bytes. The (0666/-rw-rw-rw-) indicates thats all users have to read and write access.The owner and group have same named as
    codespace with UID: 1000 and GID: 1000.
+
+4.3. command: stat softlink.txt
+     output: File: softlink.txt -> original.txt
+                   Size: 12              Blocks: 0          IO Block: 4096   symbolic link
+                   Device: 7,4     Inode: 1311046     Links: 1
+                   Access: (0777/lrwxrwxrwx)  Uid: ( 1000/codespace)   Gid: ( 1000/codespace)
+                   Access: 2026-06-23 15:07:20.914607821 +0000
+                   Modify: 2026-06-23 15:07:14.079607670 +0000
+                   Change: 2026-06-23 15:07:14.079607670 +0000
+                   Birth: 2026-06-23 15:07:14.079607670 +0000
+     
+     observation: softlink.txt is a link that points to original.txt like this: softlink.txt -> original.txt.The symbolic link has its special 
+     inode number, which is 1311046.It has a link count of 1, means it is a file from the one it points to which is original.txt.The file type of 
+     softlink.txt is listed as a link, means it does not store data.file size is 12 bytes.If you remove or rename original.txt then softlink.txt 
+     will not work anymore.It will become a link because it depends on the path, to original.txt.The softlink.txt will be broken since it relies 
+     on original.txt.
+
+
+
+
