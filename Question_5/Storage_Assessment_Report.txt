@@ -1,0 +1,89 @@
+Storage Assesssment Report
+
+1. Available Storage Devices
+   command: lsblk
+   output:                        /etc/hostname
+                                 /etc/resolv.conf
+                                 /workspaces
+loop5     7:5    0  500M  0 loop 
+sda       8:0    0   30G  0 disk 
+├─sda1    8:1    0 29.9G  0 part /workspaces/.codespaces/shared
+│                                /.codespaces/bin
+│                                /vscode
+│                                /usr/sbin/docker-init
+├─sda14   8:14   0    4M  0 part 
+└─sda15   8:15   0  106M  0 part 
+sdb       8:16   0   45G  0 disk 
+└─sdb1    8:17   0   45G  0 part /tmp
+sdc       8:32   0  512G  0 disk 
+└─sdc1    8:33   0  512G  0 part 
+sr0      11:0    1  628K  0 rom   
+ 
+observation: The lsblk command lists all the storage devices I have. These include sda which's 30 GB, sdb which is 45 GB and sdc which is 512 GB. 
+It also shows the partitions for these storage devices.The main partition on sda is sda1. It is used by several directories. These directories are 
+/workspaces /vscode. The system configuration files.I also have device sdb1 which is used for /tmp. Then there is sdc1 which's a big partition 
+with 512 GB of space. This means I have a lot of storage space on my system, with sdc.
+
+2. Mounted file systems
+   command: df  -h
+   output: 
+   Filesystem      Size  Used Avail Use% Mounted on
+   overlay          32G  9.7G   21G  33% /
+   tmpfs            64M     0   64M   0% /dev
+   shm              64M     0   64M   0% /dev/shm
+   /dev/root        29G   24G  5.8G  81% /vscode
+   /dev/sdb1        44G  2.3G   40G   6% /tmp
+  /dev/loop4       32G  9.7G   21G  33% /workspaces
+  
+  observation: The df -h command displays the disk usage of all mounted filesystems, including their total size, used space, and available space.
+  The filesystem on my computer, which's /vscode is taking up a lot of space. It is 29 GB in size. Most of it is being used, around 81% of it. 
+  that means I have around 5.8 GB of space left.The /tmp partition, which is /dev/sdb1 has a lot of space. Total has 44 GB. Only 6% of it 
+  is being used.
+
+3. Disk usage statistics
+   command: df -h
+   output: same as 2nd command which written in number 2 position see them.
+
+4. Inode utilization
+   command : df -i
+   output:   Filesystem      Inodes  IUsed   IFree IUse% Mounted on
+             overlay        2097152 204066 1893086   10% /
+             tmpfs          1016900    213 1016687    1% /dev
+             shm            1016900      1 1016899    1% /dev/shm
+             /dev/root      3870720 243303 3627417    7% /vscode
+             /dev/sdb1      2949120     30 2949090    1% /tmp
+             /dev/loop4     2097152 204066 1893086   10% /workspaces
+
+    observation: The df -i command shows inode usage, showing the used, total and free inodes for each filesystem.The filesystem on /vscode has 
+    much more space. It has 3,870,720 inodes. Only 243,303 of them are being used. it is 7 percent. So the /vscode filesystem has plenty of inodes
+    The /workspaces filesystem is using the inodes at 10 percent. The /tmp and memory-based filesystems, like tmpfs and shm are using few inodes. 
+    They are only using 1 percent of the inodes that are available.
+
+5. Storage Health observation
+   command: lsblk , df -h,  df -i, sudo dmesg | grep -E "blk_update_request|I/O error|EXT4-fs error"
+   output: first 3 commands we discussed in thi report we will only discuss the output of 4the command which iis teh Las t one.
+            [  379.733324] I/O error, dev sr0, sector 8 op 0x0:(READ) flags 0x80700 phys_seg 1 prio class 2
+            [  379.752271] I/O error, dev sr0, sector 8 op 0x0:(READ) flags 0x0 phys_seg 1 prio class 2
+            [  379.754634] Buffer I/O error on dev sr0, logical block 1, async page read
+
+   observation: The lsblk, df -h, and df -i outputs displays the system's disk space, storage devices , and inode usage are functioning normally 
+   with sufficient free resources available.The /vscode folder is using 81% of its space. The /tmp and /workspaces folders have plenty of space and
+   are not using many inodes. The system log, which is what dmesg shows has some errors. It says there are problems reading from the CD-ROM, which is 
+   also known as sr0. It does not say there are any serious problems, with the filesystem, which is EXT4.
+
+6. Recommendations for improving storage utilization
+   a. The system is making good use of storage resources. The /vscode partition is almost full at over 80% utilization We should keep observed to
+      prevent running out of space.
+
+   b.We should clean up files, old logs and unused project data on the daily basis to keep free up storage and enhance the system performance.
+
+   c.Other partitions have plenty of space so,  we can move big files and backups to them to better balance storage usage.
+
+   d. There is a low inode usage currently so the system can handle files without any other issues.
+
+   e. We  look at into I/O errors on sr0. Fixing these problems will help maintain reliablity of storage and avoid access problems int the future.
+
+
+
+
+
