@@ -22,5 +22,21 @@ sr0      11:0    1  628K  0 rom
 observation: The lsblk command lists all the storage devices I have. These include sda which's 30 GB, sdb which is 45 GB and sdc which is 512 GB. 
 It also shows the partitions for these storage devices.The main partition on sda is sda1. It is used by several directories. These directories are 
 /workspaces /vscode. The system configuration files.I also have device sdb1 which is used for /tmp. Then there is sdc1 which's a big partition 
-with 512 GB of space. This means I have a lot of storage space on my system, with sdc
+with 512 GB of space. This means I have a lot of storage space on my system, with sdc.
+
+2. Mounted file systems
+   command: df  -h
+   output: 
+   Filesystem      Size  Used Avail Use% Mounted on
+   overlay          32G  9.7G   21G  33% /
+   tmpfs            64M     0   64M   0% /dev
+   shm              64M     0   64M   0% /dev/shm
+   /dev/root        29G   24G  5.8G  81% /vscode
+   /dev/sdb1        44G  2.3G   40G   6% /tmp
+  /dev/loop4       32G  9.7G   21G  33% /workspaces
+  
+  observation: The df -h command displays the disk usage of all mounted filesystems, including their total size, used space, and available space.
+  The filesystem on my computer, which's /vscode is taking up a lot of space. It is 29 GB in size. Most of it is being used, around 81% of it. 
+  that means I have around 5.8 GB of space left.The /tmp partition, which is /dev/sdb1 has a lot of space. Total has 44 GB. Only 6% of it 
+  is being used.
 
