@@ -59,5 +59,19 @@ with 512 GB of space. This means I have a lot of storage space on my system, wit
     The /workspaces filesystem is using the inodes at 10 percent. The /tmp and memory-based filesystems, like tmpfs and shm are using few inodes. 
     They are only using 1 percent of the inodes that are available.
 
+5. Storage Health observation
+   command: lsblk , df -h,  df -i, sudo dmesg | grep -E "blk_update_request|I/O error|EXT4-fs error"
+   output: first 3 commands we discussed in thi report we will only discuss the output of 4the command which iis teh Las t one.
+            [  379.733324] I/O error, dev sr0, sector 8 op 0x0:(READ) flags 0x80700 phys_seg 1 prio class 2
+            [  379.752271] I/O error, dev sr0, sector 8 op 0x0:(READ) flags 0x0 phys_seg 1 prio class 2
+            [  379.754634] Buffer I/O error on dev sr0, logical block 1, async page read
+
+   observation: The lsblk, df -h, and df -i outputs displays the system's disk space, storage devices , and inode usage are functioning normally 
+   with sufficient free resources available.The /vscode folder is using 81% of its space. The /tmp and /workspaces folders have plenty of space and
+   are not using many inodes. The system log, which is what dmesg shows has some errors. It says there are problems reading from the CD-ROM, which is 
+   also known as sr0. It does not say there are any serious problems, with the filesystem, which is EXT4.
+   
+
+
 
 
