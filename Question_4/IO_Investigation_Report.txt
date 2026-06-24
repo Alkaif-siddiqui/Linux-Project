@@ -35,4 +35,12 @@ IO INVESTIGATION REPORT
    open files. several limits like CPU time , file size, virtual memory, number of user processes , These limits were all set to unlimited. This 
    means the process could use these things much as it wanted without any problems.The system allowed a much more  files to be open at the time.
    The maximum number of files was set to 524288. It means the system can handle a lot of files being open, at a time.
+
+5. Explanation of how Linux manages file I/O
+   Linux uses file descriptors to manage file input and output.  When a process starts it gets three file descriptors. The Linux file descriptor 0 
+   is for input the descriptor 1 is for output and the descriptor 2 is for error messages.When a process wants to access a file it uses commands 
+   like open, read, write and close. The Linux kernel handles these commands and Makes it easy for files, devices, pipes and sockets to work 
+   together.Linux also lets you redirect input and output. This means you can send output and error messages to files of the terminal. You can use 
+   symbols like > and 2> to do this. This is really useful for keeping track of what is happening with an application and, for fixing problems. 
+   
   
