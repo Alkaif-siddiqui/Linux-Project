@@ -44,7 +44,20 @@ with 512 GB of space. This means I have a lot of storage space on my system, wit
    command: df -h
    output: same as 2nd command which written in number 2 position see them.
 
-   
+4. Inode utilization
+   command : df -i
+   output:   Filesystem      Inodes  IUsed   IFree IUse% Mounted on
+             overlay        2097152 204066 1893086   10% /
+             tmpfs          1016900    213 1016687    1% /dev
+             shm            1016900      1 1016899    1% /dev/shm
+             /dev/root      3870720 243303 3627417    7% /vscode
+             /dev/sdb1      2949120     30 2949090    1% /tmp
+             /dev/loop4     2097152 204066 1893086   10% /workspaces
+
+    observation: The df -i command shows inode usage, showing the used, total and free inodes for each filesystem.The filesystem on /vscode has 
+    much more space. It has 3,870,720 inodes. Only 243,303 of them are being used. it is 7 percent. So the /vscode filesystem has plenty of inodes
+    The /workspaces filesystem is using the inodes at 10 percent. The /tmp and memory-based filesystems, like tmpfs and shm are using few inodes. 
+    They are only using 1 percent of the inodes that are available.
 
 
 
