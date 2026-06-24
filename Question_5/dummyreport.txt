@@ -70,7 +70,18 @@ with 512 GB of space. This means I have a lot of storage space on my system, wit
    with sufficient free resources available.The /vscode folder is using 81% of its space. The /tmp and /workspaces folders have plenty of space and
    are not using many inodes. The system log, which is what dmesg shows has some errors. It says there are problems reading from the CD-ROM, which is 
    also known as sr0. It does not say there are any serious problems, with the filesystem, which is EXT4.
-   
+
+6. Recommendations for improving storage utilization
+   a. The system is making good use of storage resources. The /vscode partition is almost full at over 80% utilization We should keep observed to
+      prevent running out of space.
+
+   b.We should clean up files, old logs and unused project data on the daily basis to keep free up storage and enhance the system performance.
+
+   c.Other partitions have plenty of space so,  we can move big files and backups to them to better balance storage usage.
+
+   d. There is a low inode usage currently so the system can handle files without any other issues.
+
+   e. We  look at into I/O errors on sr0. Fixing these problems will help maintain reliablity of storage and avoid access problems int the future.
 
 
 
