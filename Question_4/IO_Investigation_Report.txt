@@ -28,3 +28,11 @@ IO INVESTIGATION REPORT
     error.txt of showing up on the terminal.
     This shows how you can send the output and the errors to files, which is  useful, for the output and the errors.
    
+4. Resource limits observed
+   command: ulimit -a
+   output : see in this file resource.txt
+   observation: This command <ulimit -a> displays all the resources limits configured for the current shell, including stack size, file size, and 
+   open files. several limits like CPU time , file size, virtual memory, number of user processes , These limits were all set to unlimited. This 
+   means the process could use these things much as it wanted without any problems.The system allowed a much more  files to be open at the time.
+   The maximum number of files was set to 524288. It means the system can handle a lot of files being open, at a time.
+  
