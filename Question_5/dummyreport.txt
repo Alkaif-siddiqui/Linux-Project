@@ -40,3 +40,11 @@ with 512 GB of space. This means I have a lot of storage space on my system, wit
   that means I have around 5.8 GB of space left.The /tmp partition, which is /dev/sdb1 has a lot of space. Total has 44 GB. Only 6% of it 
   is being used.
 
+3. Disk usage statistics
+   command: df -h
+   output: same as 2nd command which written in number 2 position see them.
+
+   
+
+
+
